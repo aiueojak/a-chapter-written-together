@@ -311,8 +311,7 @@ Kamu adalah bagian dari perjalanan hidup yang akan selalu aku kenang.
 
 <p class="quote">
 
-"Ada orang yang hadir hanya sebentar,
-namun meninggalkan kenangan yang bertahan seumur hidup."
+"Ada beberapa orang pergi,tapi kenangannya tidak pernah pergi"
 
 </p>
 
@@ -323,8 +322,8 @@ namun meninggalkan kenangan yang bertahan seumur hidup."
 <section class="quote-section">
 
 <h1>
-"Beberapa orang pergi,
-tetapi kenangannya tidak pernah pergi"
+"Ada orang yang hadir hanya sebentar,
+itudah kalian"
 </h1>
 
 </section>
@@ -336,7 +335,7 @@ tetapi kenangannya tidak pernah pergi"
 <h5>A CHAPTER WRITTEN TOGETHER</h5>
 
 <p>
-DIRECTED BY RHAZAK
+DIRECTED BY aiueojak
 </p>
 
 <p>
@@ -346,46 +345,18 @@ DIRECTED BY RHAZAK
 </footer>
 
 <!-- MUSIK LATAR -->
-
 <audio id="bgMusic" loop>
-    <source src="music/kenangan.mpeg" type="audio/mpeg">
-
-<script>
-const music = document.getElementById("bgMusic");
-
-document.addEventListener("click", function () {
-    music.play();
-}, { once: true });
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<audio id="bgMusic" loop>
-    <source src="music/kenangan.mpeg" type="audio/mpeg">
+    <source src="music/kenangan.mp3" type="audio/mpeg">
 </audio>
 
 <script>
+
+// Musik mulai saat klik pertama
 document.addEventListener("click", function(){
     document.getElementById("bgMusic").play();
 }, {once:true});
-</script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- POPUP FOTO -->
-<div id="imagePopup" class="popup">
-    <span class="close-popup" onclick="closePopup()">&times;</span>
-    <img id="popupImage">
-</div>
-
-<!-- POPUP VIDEO -->
-<div id="videoPopup" class="popup">
-    <span class="close-popup" onclick="closeVideoPopup()">&times;</span>
-    <video id="popupVideo" controls autoplay></video>
-</div>
-
-<script>
-
+// Popup Foto
 function openImage(src){
     document.getElementById("imagePopup").style.display = "flex";
     document.getElementById("popupImage").src = src;
@@ -395,11 +366,11 @@ function closePopup(){
     document.getElementById("imagePopup").style.display = "none";
 }
 
+// Popup Video
 function openVideo(src){
     const video = document.getElementById("popupVideo");
 
     video.src = src;
-
     document.getElementById("videoPopup").style.display = "flex";
 
     video.play();
@@ -409,6 +380,7 @@ function closeVideoPopup(){
     const video = document.getElementById("popupVideo");
 
     video.pause();
+    video.currentTime = 0;
 
     document.getElementById("videoPopup").style.display = "none";
 }
